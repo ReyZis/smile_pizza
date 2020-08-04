@@ -1,50 +1,344 @@
-$white: #fff;
-$dark: #2B3032;
-$red: #B9262C;
-$gray: #475054;
-$yellow: #ffdd18;
-* {
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    div.container-lg {
-        nav.navbar {
-            &.navbar-height {
-                height: 95px;
-            }
-            div.navbar-collapse {
-                height: 100%;
-                ul.navbar-nav {
+    $white: #fff;
+    $dark: #2B3032;
+    $red: #B9262C;
+    $gray: #475054;
+    $light-gray:#e8ecef;
+    $yellow: #FFDD32;
+    $font: 'Montserrat',
+    sans-serif;
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    body {
+        div.container-lg {
+            nav.navbar {
+                &.navbar-height {
+                    height: 95px;
+                }
+                div.navbar-collapse {
                     height: 100%;
-                    li.nav-item {
+                    ul.nav {
                         height: 100%;
-                        a.nav-link {
+                        width: 100%;
+                        margin: 0 20px;
+                        li.nav-item {
                             display: flex;
-                            place-items: center;
-                            height: 100%;
-                            padding: 0;
-                            vertical-align: middle;
-                            color: $white;
+                            align-items: center;
+                            justify-content: center;
+                            a.nav-link {
+                                color: $white;
+                                font-size: 14px;
+                                font-weight: 700;
+                                font-family: $font;
+                            }
                         }
-                    }
-                    li.active {
-                        background-color: $yellow;
-                        a {
-                            color: $dark !important;
+                        li.active,
+                        li:hover {
+                            background-color: $yellow;
+                            a.nav-link {
+                                color: $dark;
+                            }
+                        }
+                        li.active::before,
+                        li:hover::before {
+                            content: "";
+                            position: absolute;
+                            bottom: -15px;
+                            background: #ffdd18;
+                            width: 8.55%;
+                            height: 15px;
+                            z-index: 2;
+                        }
+                        li.active::after,
+                        li:hover::after {
+                            content: "";
+                            position: absolute;
+                            bottom: -15px;
+                            width: 11%;
+                            border-top: 15px solid #a08a0c;
+                            border-left: 12px solid transparent;
+                            border-right: 12px solid transparent;
+                            z-index: 1;
                         }
                     }
                 }
+                div.infos {
+                    a,
+                    a:hover {
+                        position: relative;
+                        color: $white;
+                        text-decoration: none;
+                        font-size: 14px;
+                        font-weight: 700;
+                        font-family: $font;
+                        svg {
+                            font-size: 25px;
+                        }
+                    }
+                    a.basket::after {
+                        content: "0";
+                        color: black;
+                        background-color: $yellow;
+                        border: 2px solid black;
+                        border-radius: 50px;
+                        width: 25px;
+                        height: 25px;
+                        text-align: center;
+                        position: absolute;
+                        top: -10px;
+                        right: 0;
+                    }
+                }
             }
-            div.infos {
-                a,
-                a:hover {
-                    color: $white;
-                    text-decoration: none;
+            header {
+                background-image: url('../Page 2/Drag\ Image@2x.png');
+                background-size: cover;
+                height: 260px;
+                h1 {
+                    font-size: 36px;
+                    font-weight: 700;
+                    font-family: $font;
+                }
+                nav {
+                    .breadcrumb {
+                        background: transparent;
+                        font-size: 14px;
+                        line-height: 26px;
+                        font-family: $font;
+                    }
+                }
+            }
+            main {
+                .list-container {
+                    border-radius: 23px 0 0 23px;
+                    border: 1px solid $gray;
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: #000000;
+                    font-weight: 700;
+                    width: 288px;
+                    ul.list-group {
+                        li.list-group-item {
+                            padding-left: 40px;
+                            padding-right: 0;
+                            font-family: $font;
+                            transition: ease-in-out 0.20s;
+                        }
+                        .active,
+                        li.list-group-item:hover {
+                            background-color: $gray;
+                            border-color: $gray;
+                            color: $white;
+                        }
+                    }
+                }
+                div.smile-container {
+                    padding: 10px;
+                    background: url('../Page 2/Image 7@2x.png') center;
+                    background-size: 105% 105%;
+                    position: absolute;
+                    top: 15px;
+                    height: auto;
+                    width: 100%;
+                    h1 {
+                        position: absolute;
+                        transform: rotate(90deg) translate(85px, 53px);
+                        color: $white;
+                        border: none;
+                        font-size: 36px;
+                        font-weight: 700;
+                        font-family: $font;
+                    }
+                    img.smile {
+                        width: 100%;
+                        background-color: $white;
+                        border-radius: 50px;
+                        padding: 5px;
+                    }
+                }
+                div.col-height {
+                    height: 472px;
+                }
+                div.Allergi {
+                    border-radius: 4px;
+                    border: 1px solid $gray;
+                    background-color: $light-gray;
+                    color: $dark;
+                    font-family: $font;
+                    img {
+                        background-color: $gray;
+                        border-radius: 50px;
+                        padding: 3px;
+                        width: 35px;
+                        height: auto;
+                    }
+                    svg {
+                        border-radius: 50px;
+                        background-color: $gray;
+                        padding: 3px;
+                        width: 35px;
+                        height: auto;
+                    }
+                }
+                h1 {
+                    font-family: $font;
+                    font-size: 28px;
+                    line-height: 48px;
+                    color: #000000;
+                    font-weight: 600;
+                    border-bottom: 1px solid $dark;
+                }
+                .plate-container {
+                    background-color: $white;
+                    border: 1px solid $gray;
+                    width: 293px;
+                    div.text-container {
+                        h2.plate-name {
+                            font-size: 16px;
+                            line-height: 20px;
+                            color: $dark;
+                            font-weight: 600;
+                            font-family: $font;
+                            letter-spacing: -1px;
+                        }
+                        p.ingredients {
+                            width: 220px;
+                            font-size: 12px;
+                            color: $dark;
+                            font-family: $font;
+                        }
+                        p.additions {
+                            font-size: 12px;
+                            line-height: 12px;
+                            color: $red;
+                            font-weight: 600;
+                            font-family: $font;
+                        }
+                    }
+                    div.peppers {
+                        svg.dimensions {
+                            top: 0;
+                            width: 35px;
+                            height: auto;
+                        }
+                        svg.place1 {
+                            right: 55px;
+                        }
+                        svg.place2 {
+                            right: 35px;
+                        }
+                        svg.place3 {
+                            right: 15px;
+                        }
+                    }
+                    div.animals {
+                        svg.dimensions {
+                            top: 35px;
+                            width: 20px;
+                            height: auto;
+                        }
+                        svg.place1 {
+                            right: 15px;
+                        }
+                        svg.place2 {
+                            right: 40px;
+                        }
+                        svg.place3 {
+                            right: 65px;
+                        }
+                    }
+                    div.pizza-image {
+                        background-image: url('../Page 2/Pizza-Circle Small@2x.png');
+                        background-size: cover;
+                        width: 160px;
+                        height: 160px;
+                        position: absolute;
+                        bottom: -37px;
+                        right: -60px;
+                    }
+                    div.red-triangle {
+                        width: 0px;
+                        height: 0px;
+                        border-width: 50px 50px;
+                        border-color: #982c31 #982c31 transparent transparent;
+                        border-style: solid;
+                        top: -8px;
+                        right: -68px;
+                        p {
+                            position: absolute;
+                            color: $white;
+                            transform: rotate(45deg) translate(-25px, -20px);
+                        }
+                        &::after {
+                            content: '';
+                            width: 30px;
+                            height: 30px;
+                            background-color: #641b1f;
+                            z-index: -1;
+                            position: absolute;
+                            top: -50px;
+                            right: 30px;
+                            border-radius: 10px 0 0 0;
+                        }
+                        &::before {
+                            content: '';
+                            width: 30px;
+                            height: 30px;
+                            background-color: #641b1f;
+                            z-index: -1;
+                            position: absolute;
+                            top: 29px;
+                            right: -50px;
+                            border-radius: 0 0 10px 0;
+                        }
+                    }
+                    div.dark-rectangle {
+                        width: 60px;
+                        height: 112px;
+                        background-color: $gray;
+                        top: 0px;
+                        right: -60px;
+                    }
+                    &::before {
+                        content: "152,-";
+                        padding: 5px 10px;
+                        color: #fff;
+                        position: absolute;
+                        bottom: -20px;
+                        left: 25px;
+                        background-color: #2B3032;
+                        border: 3px solid #fff;
+                        border-radius: 12px;
+                        font-weight: 600;
+                        font-family: $font;
+                    }
+                    &::after {
+                        content: "Bestill";
+                        padding: 5px 15px;
+                        color: #fff;
+                        position: absolute;
+                        bottom: -20px;
+                        left: 110px;
+                        background-color: #2B3032;
+                        border: 3px solid #fff;
+                        border-radius: 12px;
+                        font-weight: 600;
+                        font-family: $font;
+                    }
+                }
+            }
+            footer {
+                background-color: $dark;
+                svg {
+                    width: 45px;
+                    height: auto;
+                    padding: 10px 10px;
+                }
+                span {
+                    font-family: $font;
                 }
             }
         }
     }
-}
