@@ -1,0 +1,50 @@
+$white: #fff;
+$dark: #2B3032;
+$red: #B9262C;
+$gray: #475054;
+$yellow: #ffdd18;
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    div.container-lg {
+        nav.navbar {
+            &.navbar-height {
+                height: 95px;
+            }
+            div.navbar-collapse {
+                height: 100%;
+                ul.navbar-nav {
+                    height: 100%;
+                    li.nav-item {
+                        height: 100%;
+                        a.nav-link {
+                            display: flex;
+                            place-items: center;
+                            height: 100%;
+                            padding: 0;
+                            vertical-align: middle;
+                            color: $white;
+                        }
+                    }
+                    li.active {
+                        background-color: $yellow;
+                        a {
+                            color: $dark !important;
+                        }
+                    }
+                }
+            }
+            div.infos {
+                a,
+                a:hover {
+                    color: $white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
